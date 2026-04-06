@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="de">
+    <string name="xmrig_binary_not_executable">Die XMRig-Binärdatei ist nicht ausführbar.</string>
+    <string name="xmrig_start_failed">XMRig konnte nicht gestartet werden: %1$s</string>
+    <string name="xmrig_binary_missing_from_package">Die XMRig-Binärdatei fehlt im App-Paket.</string>
+    <string name="xmrig_extract_failed">XMRig konnte nicht aus der APK extrahiert werden: %1$s</string>
+</resources>

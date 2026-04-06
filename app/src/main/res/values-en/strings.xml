@@ -1,0 +1,195 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
+    <string name="app_name">Monandroid</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_profiles">Profiles</string>
+    <string name="nav_benchmark">Benchmark</string>
+    <string name="nav_settings">Settings</string>
+
+    <string name="label_not_applicable">N/A</string>
+    <string name="label_on">On</string>
+    <string name="label_off">Off</string>
+
+    <string name="action_start">Start</string>
+    <string name="action_stop">Stop</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_resume">Resume</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_share">Share</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_duplicate">Duplicate</string>
+    <string name="action_export">Export</string>
+    <string name="action_export_all">Export all</string>
+    <string name="action_import_file">Import file</string>
+    <string name="action_include_secrets">Include secrets</string>
+    <string name="action_strip_secrets">Strip secrets</string>
+    <string name="action_save_profile">Save profile</string>
+    <string name="action_saving">Saving...</string>
+    <string name="action_clear_history">Clear history</string>
+    <string name="action_export_csv">Export CSV</string>
+    <string name="action_export_diagnostics">Export diagnostics</string>
+    <string name="action_back_to_profiles">Back to Profiles</string>
+
+    <string name="message_notification_permission_required">Notification permission is required before starting a foreground session.</string>
+    <string name="message_profile_library_export_failed">Profile library export failed.</string>
+    <string name="message_profile_export_failed">Profile export failed.</string>
+    <string name="message_profile_import_failed">Profile import failed.</string>
+    <string name="message_diagnostics_export_failed">Diagnostics export failed.</string>
+    <string name="message_recent_logs_copied">Recent logs copied.</string>
+    <string name="message_profile_created">Created %1$s.</string>
+    <string name="message_profile_duplication_failed">Profile duplication failed.</string>
+    <string name="message_benchmark_export_failed">Benchmark export failed.</string>
+    <string name="message_developer_wallet_copied">Developer wallet copied.</string>
+    <string name="message_profile_export_success">Exported %1$s.</string>
+    <string name="message_profile_export_success_safe">Exported share-safe backup for %1$s.</string>
+    <string name="message_import_settings_restored">Settings were restored too.</string>
+    <string name="message_import_passwords_not_included">Password fields were not included in this backup.</string>
+    <string name="message_diagnostics_export_success">Exported diagnostics with %1$d profiles, %2$d benchmark results, and %3$d log lines.</string>
+
+    <plurals name="message_app_backup_export_success">
+        <item quantity="one">Exported full app backup with %d profile.</item>
+        <item quantity="other">Exported full app backup with %d profiles.</item>
+    </plurals>
+    <plurals name="message_app_backup_export_success_safe">
+        <item quantity="one">Exported share-safe app backup with %d profile.</item>
+        <item quantity="other">Exported share-safe app backup with %d profiles.</item>
+    </plurals>
+    <plurals name="message_profiles_imported_from_backup">
+        <item quantity="one">Imported %d profile from backup.</item>
+        <item quantity="other">Imported %d profiles from backup.</item>
+    </plurals>
+    <plurals name="message_benchmark_results_exported">
+        <item quantity="one">Exported %d benchmark result.</item>
+        <item quantity="other">Exported %d benchmark results.</item>
+    </plurals>
+
+    <string name="dialog_export_backup_title">Export Backup</string>
+    <string name="dialog_export_backup_message">Choose whether this backup should include saved pool passwords. Share-safe backups keep profile structure but strip secrets.</string>
+
+    <string name="share_recent_logs_subject">Monandroid Recent Logs</string>
+    <string name="share_recent_logs_chooser">Share logs</string>
+
+    <string name="error_profile_invalid">Profile data is invalid.</string>
+    <string name="error_open_export_destination">Could not open the export destination.</string>
+    <string name="error_open_selected_profile_file">Could not open the selected profile file.</string>
+    <string name="error_open_diagnostics_destination">Could not open the diagnostics export destination.</string>
+    <string name="error_profile_library_requires_profile">Create at least one profile before exporting the library.</string>
+    <string name="error_benchmark_history_requires_result">Run at least one benchmark before exporting history.</string>
+    <string name="error_profile_unavailable">This profile could not be loaded.</string>
+    <string name="error_profile_save_failed">Profile could not be saved.</string>
+    <string name="error_unknown">Unknown</string>
+
+    <string name="home_section_session">Mining Session</string>
+    <string name="home_no_active_profile">No active profile</string>
+    <string name="home_create_profile_to_begin">Create a profile to begin</string>
+    <string name="home_profile_disabled">This profile is disabled.</string>
+    <string name="home_status_template">Status: %1$s</string>
+    <string name="home_mode_template">Mode: %1$s</string>
+    <string name="home_connected_pool_template">Connected pool: %1$s</string>
+    <string name="home_create_and_activate_profile">Create and activate a profile before starting a mining session.</string>
+    <string name="home_enable_active_profile">Enable the active profile in Profiles before starting a mining session.</string>
+    <string name="home_warmup_notice">Session is warming up. Hashrate and share counters usually appear after the first few summary updates.</string>
+    <string name="home_metric_hashrate">Hashrate</string>
+    <string name="home_metric_accepted">Accepted</string>
+    <string name="home_metric_rejected">Rejected</string>
+    <string name="home_metric_uptime">Uptime</string>
+    <string name="home_last_session_split">Last Session Split</string>
+    <string name="home_last_session_user_mining">User mining: %1$s</string>
+    <string name="home_last_session_developer_fee">Developer fee: %1$s</string>
+    <string name="home_recent_logs">Recent Logs</string>
+    <string name="home_recent_logs_empty_summary">No runtime output captured yet</string>
+    <string name="home_recent_logs_empty_body">No runtime output yet. Start mining or a benchmark to capture recent XMRig logs here.</string>
+    <plurals name="home_recent_logs_stored">
+        <item quantity="one">Stored %d line</item>
+        <item quantity="other">Stored %d lines</item>
+    </plurals>
+    <string name="elapsed_hours_minutes">%1$dh %2$dm</string>
+    <string name="elapsed_minutes_seconds">%1$dm %2$ds</string>
+    <string name="elapsed_seconds">%1$ds</string>
+
+    <string name="profiles_library_title">Profile Library</string>
+    <string name="profiles_library_description">Export profiles to JSON for backup or move them to another device later. You can choose full backups or share-safe backups that strip passwords.</string>
+    <string name="profiles_library_warning">Backup files include wallet and pool password data. Store them like a secret.</string>
+    <string name="profiles_empty_title">No Profiles Yet</string>
+    <string name="profiles_empty_description">Create your first profile to start mining or benchmarking with your own pool settings.</string>
+    <string name="profiles_wallet_template">Wallet: %1$s</string>
+    <string name="profiles_rig_id_template">Rig ID: %1$s</string>
+    <string name="profiles_status_template">Status: %1$s</string>
+    <string name="profiles_status_enabled">Enabled</string>
+    <string name="profiles_status_disabled">Disabled</string>
+    <string name="profiles_active_profile">Active profile</string>
+    <string name="profiles_set_active">Set active</string>
+    <string name="profiles_stop_before_delete">Stop the current mining session before deleting the active profile.</string>
+    <string name="profiles_meta_summary">Algorithm: %1$s | TLS: %2$s | Backup pools: %3$d</string>
+    <string name="profiles_edit_content_description">Edit</string>
+    <string name="profiles_delete_content_description">Delete</string>
+    <string name="profiles_create_content_description">Create profile</string>
+    <string name="dialog_delete_profile_title">Delete Profile</string>
+    <string name="dialog_delete_profile_message">Delete %1$s? This cannot be undone.</string>
+    <string name="profile_generated_name_default">Profile</string>
+    <string name="profile_generated_suffix_copy">Copy</string>
+    <string name="profile_generated_suffix_imported">Imported</string>
+
+    <string name="profile_editor_create_title">Create Profile</string>
+    <string name="profile_editor_edit_title">Edit Profile</string>
+    <string name="profile_editor_unavailable_title">Profile Unavailable</string>
+    <string name="field_profile_name">Profile name</string>
+    <string name="field_pool_endpoint">Pool endpoint</string>
+    <string name="field_wallet_address">Wallet address</string>
+    <string name="field_password">Password</string>
+    <string name="field_rig_id_optional">Rig ID (optional)</string>
+    <string name="field_enabled">Enabled</string>
+    <string name="field_tls">TLS</string>
+    <string name="placeholder_pool_endpoint">pool.example.com:3333</string>
+    <string name="advanced_mode_section_title">Advanced Mode</string>
+    <string name="field_algorithm">Algorithm</string>
+    <string name="field_max_threads_hint">Max threads hint (%)</string>
+    <string name="field_retry_count">Retry count</string>
+    <string name="field_retry_pause_seconds">Retry pause seconds</string>
+    <string name="field_backup_pools">Backup pools (one per line)</string>
+    <string name="placeholder_backup_pool_endpoint">backup.example.com:3333</string>
+    <string name="field_keep_connection_alive">Keep connection alive</string>
+    <string name="field_continue_screen_off">Continue when screen is off</string>
+    <string name="field_require_charging">Require charging</string>
+
+    <string name="benchmark_run_title">Run Benchmark</string>
+    <string name="benchmark_run_description">Offline benchmark mode measures device performance without applying the developer fee.</string>
+    <string name="benchmark_stop_session_warning">Stop the current mining session before starting a benchmark.</string>
+    <string name="benchmark_button_label">%1$s | %2$s</string>
+    <string name="benchmark_latest_running_result">Latest running result: %1$s</string>
+    <string name="benchmark_saved_results_title">Saved Results</string>
+    <string name="benchmark_no_results">No benchmark results yet. Run one to capture device performance.</string>
+    <string name="benchmark_history_summary_title">History Summary</string>
+    <string name="benchmark_best_result">Best result: %1$s</string>
+    <string name="benchmark_average_hashrate">Average hashrate: %1$s</string>
+    <string name="benchmark_latest_preset">Latest preset: %1$s</string>
+    <string name="benchmark_latest_run">Latest run: %1$s</string>
+    <string name="benchmark_algorithms_tested">Algorithms tested: %1$d</string>
+    <string name="benchmark_saved_results_description">You can keep these as a device baseline or clear them before sharing screenshots or builds.</string>
+    <string name="benchmark_duration">Duration: %1$s</string>
+    <string name="benchmark_battery_delta">Battery delta: %1$s</string>
+    <string name="benchmark_thermal_peak">Thermal peak: %1$s</string>
+    <string name="benchmark_recorded">Recorded: %1$s</string>
+    <string name="dialog_clear_benchmark_history_title">Clear Benchmark History</string>
+    <string name="dialog_clear_benchmark_history_message">Delete all saved benchmark results from this device?</string>
+    <plurals name="benchmark_saved_results_count">
+        <item quantity="one">%d result saved locally.</item>
+        <item quantity="other">%d results saved locally.</item>
+    </plurals>
+
+    <string name="settings_developer_fee_title">Developer Fee</string>
+    <string name="settings_developer_fee_percent">%1$d%%</string>
+    <string name="settings_developer_fee_enabled">You keep %1$d%% of the runtime. Benchmark mode ignores this value.</string>
+    <string name="settings_developer_fee_disabled">Developer wallet is not configured, so runtime stays at 0%% developer fee and you keep 100%%.</string>
+    <string name="settings_developer_fee_note">Implemented as approximate time-sliced wallet routing, not post-payout splitting.</string>
+    <string name="settings_developer_wallet_title">Developer wallet</string>
+    <string name="settings_developer_wallet_placeholder">Developer wallet is still a placeholder. Replace it before release.</string>
+    <string name="settings_advanced_mode_title">Advanced Mode</string>
+    <string name="settings_advanced_mode_toggle_title">Show advanced miner settings</string>
+    <string name="settings_advanced_mode_toggle_description">Unlock backup pools, thread tuning, screen-off behavior and algorithm switching in the profile editor.</string>
+    <string name="settings_support_title">Support and Diagnostics</string>
+    <string name="settings_version">Version %1$s (%2$d)</string>
+    <string name="settings_support_description">Export a support snapshot with miner state, masked profile summaries, benchmark history and redacted recent logs. Saved pool passwords are redacted before export.</string>
+</resources>

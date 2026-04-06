@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
+    <string name="algorithm_label_rx0">RandomX / Monero</string>
+    <string name="algorithm_label_rxwow">RandomX / Wownero</string>
+
+    <string name="benchmark_preset_label_one_mega">1M</string>
+    <string name="benchmark_preset_label_ten_mega">10M</string>
+
+    <string name="profile_validation_name_required">Profile name is required.</string>
+    <string name="profile_validation_pool_required">Pool endpoint is required.</string>
+    <string name="profile_validation_pool_invalid">Pool must look like host:port, stratum+tcp://host:port, or stratum+ssl://host:port.</string>
+    <string name="profile_validation_wallet_required">Wallet address is required.</string>
+    <string name="profile_validation_wallet_whitespace">Wallet address cannot contain spaces or line breaks.</string>
+    <string name="profile_validation_backup_invalid">Backup pool %1$s is not a valid endpoint.</string>
+    <string name="profile_validation_backup_duplicates_primary">Backup pool %1$s duplicates the primary pool.</string>
+    <string name="profile_validation_backup_duplicates_existing">Backup pool %1$s is listed more than once.</string>
+    <string name="profile_validation_threads_range">Max threads hint must be between 1 and 100.</string>
+    <string name="profile_validation_retry_count_range">Retry count must be between 0 and 99.</string>
+    <string name="profile_validation_retry_pause_range">Retry pause must be between 0 and 300 seconds.</string>
+    <string name="profile_validation_invalid_generic">Profile data is invalid.</string>
+
+    <string name="profile_repository_profile_missing">This profile no longer exists. Refresh the list and try again.</string>
+    <string name="profile_repository_secret_save_failed">Profile secret could not be saved.</string>
+
+    <string name="profile_transfer_export_requires_profile">At least one profile is required for export.</string>
+    <string name="profile_transfer_active_index_invalid">Active profile index must point to an exported profile.</string>
+    <string name="profile_transfer_multiple_profiles">This file contains more than one profile.</string>
+    <string name="profile_transfer_unsupported_version">Unsupported profile file version.</string>
+    <string name="profile_transfer_empty">This profile file is empty.</string>
+</resources>

@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="de">
+    <string name="algorithm_label_rx0">RandomX / Monero</string>
+    <string name="algorithm_label_rxwow">RandomX / Wownero</string>
+
+    <string name="benchmark_preset_label_one_mega">1M</string>
+    <string name="benchmark_preset_label_ten_mega">10M</string>
+
+    <string name="profile_validation_name_required">Ein Profilname ist erforderlich.</string>
+    <string name="profile_validation_pool_required">Ein Pool-Endpunkt ist erforderlich.</string>
+    <string name="profile_validation_pool_invalid">Der Pool muss wie host:port, stratum+tcp://host:port oder stratum+ssl://host:port aussehen.</string>
+    <string name="profile_validation_wallet_required">Eine Wallet-Adresse ist erforderlich.</string>
+    <string name="profile_validation_wallet_whitespace">Die Wallet-Adresse darf keine Leerzeichen oder Zeilenumbrüche enthalten.</string>
+    <string name="profile_validation_backup_invalid">Backup-Pool %1$s ist kein gültiger Endpunkt.</string>
+    <string name="profile_validation_backup_duplicates_primary">Backup-Pool %1$s dupliziert den primären Pool.</string>
+    <string name="profile_validation_backup_duplicates_existing">Backup-Pool %1$s ist mehr als einmal aufgeführt.</string>
+    <string name="profile_validation_threads_range">Der Hinweis für maximale Threads muss zwischen 1 und 100 liegen.</string>
+    <string name="profile_validation_retry_count_range">Die Anzahl der Wiederholungen muss zwischen 0 und 99 liegen.</string>
+    <string name="profile_validation_retry_pause_range">Die Pause zwischen Wiederholungen muss zwischen 0 und 300 Sekunden liegen.</string>
+    <string name="profile_validation_invalid_generic">Die Profildaten sind ungültig.</string>
+
+    <string name="profile_repository_profile_missing">Dieses Profil existiert nicht mehr. Aktualisiere die Liste und versuche es erneut.</string>
+    <string name="profile_repository_secret_save_failed">Das Profilgeheimnis konnte nicht gespeichert werden.</string>
+
+    <string name="profile_transfer_export_requires_profile">Für den Export ist mindestens ein Profil erforderlich.</string>
+    <string name="profile_transfer_active_index_invalid">Der Index des aktiven Profils muss auf ein exportiertes Profil zeigen.</string>
+    <string name="profile_transfer_multiple_profiles">Diese Datei enthält mehr als ein Profil.</string>
+    <string name="profile_transfer_unsupported_version">Nicht unterstützte Version der Profildatei.</string>
+    <string name="profile_transfer_empty">Diese Profildatei ist leer.</string>
+</resources>

@@ -1,0 +1,61 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="de">
+    <string name="miner_app_name">Monandroid</string>
+
+    <string name="miner_notification_channel_name">Mining-Sitzung</string>
+    <string name="miner_notification_channel_description">Zeigt den Mining-Status von Monandroid an</string>
+
+    <string name="miner_action_pause">Pausieren</string>
+    <string name="miner_action_stop">Stopp</string>
+    <string name="miner_action_resume">Fortsetzen</string>
+    <string name="miner_action_dismiss">Ausblenden</string>
+
+    <string name="miner_notification_benchmark_title">Benchmark</string>
+    <string name="miner_notification_error_title">Monandroid Fehler</string>
+    <string name="miner_notification_running_text">%1$s | %2$s</string>
+    <string name="miner_notification_paused_text">Mining pausiert</string>
+    <string name="miner_notification_benchmarking_text">Benchmark läuft: %1$s</string>
+    <string name="miner_notification_starting_text">Miner wird gestartet</string>
+    <string name="miner_notification_error_text">Mining-Fehler</string>
+
+    <string name="miner_notification_line_status">Status: %1$s</string>
+    <string name="miner_notification_line_mode">Modus: %1$s</string>
+    <string name="miner_notification_line_hashrate">Hashrate: %1$s</string>
+    <string name="miner_notification_line_pool">Pool: %1$s</string>
+    <string name="miner_notification_line_reason">Grund: %1$s</string>
+    <string name="miner_notification_line_algorithm">Algorithmus: %1$s</string>
+    <string name="miner_notification_line_preset">Preset: %1$s</string>
+    <string name="miner_notification_line_current_result">Aktuelles Ergebnis: %1$s</string>
+
+    <string name="miner_hashrate_hps">%1$.1f H/s</string>
+    <string name="miner_hashrate_khps">%1$.2f kH/s</string>
+    <string name="miner_hashrate_mhps">%1$.2f MH/s</string>
+
+    <string name="miner_status_idle">Leerlauf</string>
+    <string name="miner_status_starting">Startet</string>
+    <string name="miner_status_running">Läuft</string>
+    <string name="miner_status_paused">Pausiert</string>
+    <string name="miner_status_benchmarking">Benchmark läuft</string>
+    <string name="miner_status_error">Fehler</string>
+
+    <string name="miner_fee_mode_inactive">Inaktiv</string>
+    <string name="miner_fee_mode_user">Benutzer</string>
+    <string name="miner_fee_mode_developer">Entwicklergebühr</string>
+
+    <string name="miner_message_stopped_by_user">Vom Benutzer gestoppt</string>
+    <string name="miner_message_paused_by_user">Vom Benutzer pausiert</string>
+    <string name="miner_message_service_destroyed">Dienst beendet</string>
+
+    <string name="miner_error_create_and_activate_profile">Erstelle und aktiviere zuerst ein Mining-Profil.</string>
+    <string name="miner_error_active_profile_disabled">Das aktive Profil ist deaktiviert. Aktiviere es, bevor du Mining startest.</string>
+    <string name="miner_error_pause_failed">XMRig konnte nicht pausiert werden.</string>
+    <string name="miner_error_resume_failed">XMRig konnte nicht fortgesetzt werden.</string>
+    <string name="miner_error_benchmark_failed_with_code">Benchmark mit Code %1$d fehlgeschlagen</string>
+    <string name="miner_error_runtime_exited_with_last_output">XMRig wurde mit Code %1$d beendet. Letzte Ausgabe: %2$s</string>
+    <string name="miner_error_runtime_exited_with_code">XMRig wurde mit Code %1$d beendet</string>
+
+    <string name="miner_constraint_thermal_protection">Thermischer Schutz</string>
+    <string name="miner_constraint_battery_saver">Batteriesparmodus aktiv</string>
+    <string name="miner_constraint_low_battery">Niedriger Akkustand</string>
+    <string name="miner_constraint_screen_off">Bildschirm ist aus</string>
+    <string name="miner_constraint_waiting_for_charging">Warten auf Ladevorgang</string>
+</resources>
