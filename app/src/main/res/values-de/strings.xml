@@ -66,7 +66,7 @@
     </plurals>
 
     <string name="dialog_export_backup_title">Backup exportieren</string>
-    <string name="dialog_export_backup_message">Wähle aus, ob dieses Backup gespeicherte Pool-Passwörter enthalten soll. Share-safe-Backups behalten die Profilstruktur bei, entfernen aber Geheimnisse.</string>
+    <string name="dialog_export_backup_message">Waehle aus, ob dieses Backup gespeicherte Pool-Passwoerter und Rig-IDs enthalten soll. Share-safe-Backups behalten die Profilstruktur bei, entfernen aber identifizierende Felder.</string>
 
     <string name="share_recent_logs_subject">Monandroid Letzte Logs</string>
     <string name="share_recent_logs_chooser">Logs teilen</string>
@@ -110,7 +110,7 @@
     <string name="elapsed_seconds">%1$ds</string>
 
     <string name="profiles_library_title">Profilbibliothek</string>
-    <string name="profiles_library_description">Exportiere Profile als JSON zur Sicherung oder um sie später auf ein anderes Gerät zu übertragen. Du kannst vollständige Backups oder share-safe-Backups wählen, die Passwörter entfernen.</string>
+    <string name="profiles_library_description">Exportiere Profile als JSON zur Sicherung oder um sie spaeter auf ein anderes Geraet zu uebertragen. Du kannst vollstaendige Backups oder share-safe-Backups waehlen, die Passwoerter und Rig-IDs entfernen.</string>
     <string name="profiles_library_warning">Backup-Dateien enthalten Wallet- und Pool-Passwortdaten. Bewahre sie wie ein Geheimnis auf.</string>
     <string name="profiles_empty_title">Noch keine Profile</string>
     <string name="profiles_empty_description">Erstelle dein erstes Profil, um mit deinen eigenen Pool-Einstellungen zu minen oder Benchmarks auszuführen.</string>
@@ -191,5 +191,5 @@
     <string name="settings_advanced_mode_toggle_description">Schaltet Backup-Pools, Thread-Tuning, Verhalten bei ausgeschaltetem Bildschirm und Algorithmuswechsel im Profil-Editor frei.</string>
     <string name="settings_support_title">Support und Diagnose</string>
     <string name="settings_version">Version %1$s (%2$d)</string>
-    <string name="settings_support_description">Exportiere eine Support-Aufnahme mit Miner-Status, maskierten Profilzusammenfassungen, Benchmark-Verlauf und redigierten aktuellen Logs. Gespeicherte Pool-Passwörter werden vor dem Export geschwärzt.</string>
+    <string name="settings_support_description">Exportiere eine Support-Aufnahme mit Miner-Status, anonymisierten Profilbezeichnungen, Benchmark-Verlauf und redigierten aktuellen Logs. Gespeicherte Pool-Passwoerter werden vor dem Export geschwaerzt.</string>
 </resources>

@@ -31,11 +31,11 @@ Monandroid is an Android-first GUI wrapper for XMRig that focuses on simple prof
 7. Use `Profiles > Duplicate` when you want to clone a working pool setup and tweak it without overwriting the original.
 8. Use `Home > Recent Logs` to inspect, copy, share, or clear the latest XMRig output without attaching `adb`.
 9. Use `Profiles > Export` to save one profile as JSON, or `Profiles > Export all` to create a full app backup that also captures your settings and active-profile selection.
-10. Each export lets you choose between a full backup and a share-safe backup that strips saved pool passwords.
+10. Each export lets you choose between a full backup and a share-safe backup that strips saved pool passwords and rig IDs.
 11. Use `Profiles > Import file` to restore one or many profiles from a JSON export on another install or device. On a clean install, full app backups also restore saved settings.
 12. Use `Benchmark > Export CSV` when you want to compare device runs outside the app.
 13. Enable `Advanced Mode` in `Settings` to unlock backup pools, retry tuning, thread hints, keep-alive, and screen-off / charging behavior.
-14. Use `Settings > Support and Diagnostics > Export diagnostics` to create a support snapshot with miner state, redacted recent logs and masked profile summaries.
+14. Use `Settings > Support and Diagnostics > Export diagnostics` to create a support snapshot with miner state, redacted recent logs and anonymized profile labels.
 
 ## Troubleshooting
 
@@ -44,9 +44,9 @@ Monandroid is an Android-first GUI wrapper for XMRig that focuses on simple prof
 - `Profile` validation now rejects whitespace-heavy endpoints, unbracketed IPv6 endpoints, duplicate backup pools, and wallet addresses with embedded spaces or line breaks.
 - `Benchmark` results are stored locally until you clear them from the `Saved Results` section.
 - `Home > Recent Logs` is meant to be the first debugging stop before reaching for `adb logcat`.
-- `Settings > Export diagnostics` creates a shareable JSON snapshot that redacts saved pool passwords, full wallet addresses, and other known sensitive values from recent logs.
+- `Settings > Export diagnostics` creates a shareable JSON snapshot that redacts saved pool passwords, full wallet addresses, anonymizes profile labels, and strips other known sensitive values from recent logs.
 - `Profile` export/import uses a human-readable JSON file and now supports both single-profile and full app backups.
-- Backup exports can include wallet and pool password data. Use the share-safe export option when you want to send a config without secrets.
+- Backup exports can include wallet, rig ID, and pool password data. Use the share-safe export option when you want to send a config without identifying fields.
 - `Benchmark > Export CSV` writes your saved result history in spreadsheet-friendly format.
 
 ## Build

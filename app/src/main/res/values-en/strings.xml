@@ -66,7 +66,7 @@
     </plurals>
 
     <string name="dialog_export_backup_title">Export Backup</string>
-    <string name="dialog_export_backup_message">Choose whether this backup should include saved pool passwords. Share-safe backups keep profile structure but strip secrets.</string>
+    <string name="dialog_export_backup_message">Choose whether this backup should include saved pool passwords and rig IDs. Share-safe backups keep profile structure but strip identifying fields.</string>
 
     <string name="share_recent_logs_subject">Monandroid Recent Logs</string>
     <string name="share_recent_logs_chooser">Share logs</string>
@@ -110,7 +110,7 @@
     <string name="elapsed_seconds">%1$ds</string>
 
     <string name="profiles_library_title">Profile Library</string>
-    <string name="profiles_library_description">Export profiles to JSON for backup or move them to another device later. You can choose full backups or share-safe backups that strip passwords.</string>
+    <string name="profiles_library_description">Export profiles to JSON for backup or move them to another device later. You can choose full backups or share-safe backups that strip passwords and rig IDs.</string>
     <string name="profiles_library_warning">Backup files include wallet and pool password data. Store them like a secret.</string>
     <string name="profiles_empty_title">No Profiles Yet</string>
     <string name="profiles_empty_description">Create your first profile to start mining or benchmarking with your own pool settings.</string>
@@ -191,5 +191,5 @@
     <string name="settings_advanced_mode_toggle_description">Unlock backup pools, thread tuning, screen-off behavior and algorithm switching in the profile editor.</string>
     <string name="settings_support_title">Support and Diagnostics</string>
     <string name="settings_version">Version %1$s (%2$d)</string>
-    <string name="settings_support_description">Export a support snapshot with miner state, masked profile summaries, benchmark history and redacted recent logs. Saved pool passwords are redacted before export.</string>
+    <string name="settings_support_description">Export a support snapshot with miner state, anonymized profile labels, benchmark history and redacted recent logs. Saved pool passwords are redacted before export.</string>
 </resources>

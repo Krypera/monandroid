@@ -20,8 +20,9 @@ import org.junit.Test
 class DiagnosticsExportTest {
     @Test
     fun buildDiagnosticsJson_masksWalletsAndIncludesRecentState() {
-        val wallet = "49BE1LKSDDriFWNb1TSeW98y5GZjbT1HJJ2LdiUGieMVXRo6Bm4gop1dRLr1mvtxCpSNewpAUNNzeBM8RtNiTf4YDucDVCt"
+        val wallet = "49" + "A".repeat(93)
         val password = "super-secret"
+        val maskedWallet = "49AAAAAA...AAAAAAAA"
         val profile = MiningProfileSummary(
             id = 7L,
             name = "Phone",
@@ -94,16 +95,21 @@ class DiagnosticsExportTest {
         val logs = root.getValue("recentLogs").jsonArray
 
         assertEquals("Monandroid", root.getValue("app").jsonPrimitive.content)
-        assertEquals("49BE1LKS...YDucDVCt", firstProfile.getValue("walletAddressMasked").jsonPrimitive.content)
+        assertEquals("Profile 1", firstProfile.getValue("label").jsonPrimitive.content)
+        assertEquals(maskedWallet, firstProfile.getValue("walletAddressMasked").jsonPrimitive.content)
+        assertEquals("true", firstProfile.getValue("hasRigId").jsonPrimitive.content)
         assertEquals("RUNNING", miner.getValue("status").jsonPrimitive.content)
+        assertEquals("Profile 1", miner.getValue("activeProfileLabel").jsonPrimitive.content)
         assertEquals(
-            "password=[redacted] user=49BE1LKS...YDucDVCt",
+            "password=[redacted] user=$maskedWallet",
             miner.getValue("lastError").jsonPrimitive.content,
         )
         assertEquals(2, logs.size)
         assertFalse(diagnosticsJson.contains(wallet))
         assertFalse(diagnosticsJson.contains(password))
-        assertTrue(diagnosticsJson.contains("49BE1LKS...YDucDVCt"))
+        assertFalse(diagnosticsJson.contains("Phone"))
+        assertFalse(diagnosticsJson.contains("phone-rig"))
+        assertTrue(diagnosticsJson.contains(maskedWallet))
         assertTrue(diagnosticsJson.contains("password=[redacted]"))
     }
 

@@ -19,7 +19,7 @@ class ProfileTransferCodecTest {
                 primaryPoolUrl = "pool.example.com:443",
                 walletAddress = "wallet-address",
                 password = "x",
-                rigId = "berke-phone",
+                rigId = "phone-rig",
                 tls = true,
                 enabled = true,
                 advancedSettings = AdvancedMinerSettings(
@@ -44,7 +44,7 @@ class ProfileTransferCodecTest {
         assertThat(importedDraft.primaryPoolUrl).isEqualTo("pool.example.com:443")
         assertThat(importedDraft.walletAddress).isEqualTo("wallet-address")
         assertThat(importedDraft.password).isEqualTo("x")
-        assertThat(importedDraft.rigId).isEqualTo("berke-phone")
+        assertThat(importedDraft.rigId).isEqualTo("phone-rig")
         assertThat(importedDraft.tls).isTrue()
         assertThat(importedDraft.advancedSettings.algorithmMode).isEqualTo(AlgorithmMode.RXWOW)
         assertThat(importedDraft.advancedSettings.backupPools).hasSize(1)
@@ -141,7 +141,7 @@ class ProfileTransferCodecTest {
     }
 
     @Test
-    fun encodeProfiles_withoutSecrets_marksBackupAndStripsPasswords() {
+    fun encodeProfiles_withoutSecrets_marksBackupAndStripsPasswordsAndRigId() {
         val importedTransfer = ProfileTransferCodec.decodeTransfer(
             ProfileTransferCodec.encodeProfiles(
                 profiles = listOf(
@@ -163,5 +163,6 @@ class ProfileTransferCodecTest {
 
         assertThat(importedTransfer.containsSecrets).isFalse()
         assertThat(importedTransfer.profiles.single().password).isEmpty()
+        assertThat(importedTransfer.profiles.single().rigId).isEmpty()
     }
 }

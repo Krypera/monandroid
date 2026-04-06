@@ -34,6 +34,7 @@ internal fun buildDiagnosticsJson(
     settingsUiState: SettingsUiState,
     exportedAtMillis: Long,
 ): String {
+    val profileLabels = buildProfileLabels(profilesUiState.profiles)
     val sensitiveTokens = buildSensitiveLogTokens(profilesUiState.profiles)
     val redactedLogs = sanitizeRecentLogsForDiagnostics(
         recentLogs = homeUiState.recentLogs,
@@ -44,7 +45,7 @@ internal fun buildDiagnosticsJson(
     }
     val payload = buildJsonObject {
         put("app", "Monandroid")
-        put("formatVersion", 1)
+        put("formatVersion", 2)
         put("exportedAt", exportedAtMillis)
         put("containsSecrets", false)
         put(
@@ -72,8 +73,10 @@ internal fun buildDiagnosticsJson(
                 put(
                     "items",
                     JsonArray(
-                        profilesUiState.profiles.map { profile ->
-                            profile.toDiagnosticsJson()
+                        profilesUiState.profiles.mapIndexed { index, profile ->
+                            profile.toDiagnosticsJson(
+                                label = profileLabels[profile.id] ?: buildProfileLabel(index),
+                            )
                         },
                     ),
                 )
@@ -83,7 +86,12 @@ internal fun buildDiagnosticsJson(
             "miner",
             buildJsonObject {
                 put("status", homeUiState.minerState.status.name)
-                putNullable("activeProfileName", homeUiState.minerState.activeProfileName?.let(::JsonPrimitive))
+                putNullable(
+                    "activeProfileLabel",
+                    homeUiState.minerState.activeProfileId
+                        ?.let(profileLabels::get)
+                        ?.let(::JsonPrimitive),
+                )
                 put("currentFeeMode", homeUiState.minerState.currentFeeMode.name)
                 put("hashrateHps", homeUiState.minerState.hashrateHps)
                 put("acceptedShares", homeUiState.minerState.acceptedShares)
@@ -155,18 +163,26 @@ internal fun buildDiagnosticsJson(
     }.encodeToString(JsonObject.serializer(), payload)
 }
 
-private fun MiningProfileSummary.toDiagnosticsJson(): JsonObject = buildJsonObject {
+private fun MiningProfileSummary.toDiagnosticsJson(label: String): JsonObject = buildJsonObject {
     put("id", id)
-    put("name", name)
+    put("label", label)
     put("primaryPoolUrl", primaryPoolUrl)
     put("walletAddressMasked", maskWalletForDiagnostics(walletAddress))
-    putNullable("rigId", rigId?.let(::JsonPrimitive))
+    put("hasRigId", !rigId.isNullOrBlank())
     put("tls", tls)
     put("enabled", enabled)
     put("algorithm", advancedSettings.algorithmMode.xmrigValue)
     put("keepAlive", advancedSettings.keepAlive)
     put("backupPoolCount", advancedSettings.backupPools.size)
 }
+
+private fun buildProfileLabels(
+    profiles: List<MiningProfileSummary>,
+): Map<Long, String> = profiles.mapIndexed { index, profile ->
+    profile.id to buildProfileLabel(index)
+}.toMap()
+
+private fun buildProfileLabel(index: Int): String = "Profile ${index + 1}"
 
 private fun BenchmarkResult.toDiagnosticsJson(): JsonObject = buildJsonObject {
     put("recordedAt", createdAt)

@@ -12,11 +12,12 @@ import org.junit.Test
 class ProfilePresentationTest {
     @Test
     fun maskWalletAddressForList_masksLongWallets() {
+        val wallet = "49" + "A".repeat(93)
         val masked = maskWalletAddressForList(
-            "49BE1LKSDDriFWNb1TSeW98y5GZjbT1HJJ2LdiUGieMVXRo6Bm4gop1dRLr1mvtxCpSNewpAUNNzeBM8RtNiTf4YDucDVCt",
+            wallet,
         )
 
-        assertEquals("49BE1LKS...YDucDVCt", masked)
+        assertEquals("49AAAAAA...AAAAAAAA", masked)
     }
 
     @Test

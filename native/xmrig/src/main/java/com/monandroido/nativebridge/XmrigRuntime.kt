@@ -120,8 +120,10 @@ class XmrigRuntime(private val context: Context) {
         if (packagedBinary.exists()) {
             return packagedBinary
         }
+        val packagedBinarySize = packagedBinaryMetadata()?.size?.takeIf { it > 0L }
         val extractedUpToDate = extractedBinary.exists() &&
             extractedBinary.length() > 0L &&
+            (packagedBinarySize == null || extractedBinary.length() == packagedBinarySize) &&
             extractedBinary.lastModified() >= latestPackagedBinaryTimestamp()
         if (extractedUpToDate) {
             return extractedBinary
@@ -141,6 +143,8 @@ class XmrigRuntime(private val context: Context) {
         onOutput: (String) -> Unit,
     ): File? {
         destinationFile.parentFile?.mkdirs()
+        val tempFile = File(destinationFile.parentFile, "${destinationFile.name}.tmp")
+        tempFile.delete()
         val apkCandidates = buildList {
             add(context.applicationInfo.sourceDir)
             context.applicationInfo.splitSourceDirs?.let { addAll(it) }
@@ -158,9 +162,22 @@ class XmrigRuntime(private val context: Context) {
                         ?: return@use null
 
                     zip.getInputStream(entry).use { input ->
-                        destinationFile.outputStream().use { output ->
+                        tempFile.outputStream().use { output ->
                             input.copyTo(output)
                         }
+                    }
+                    val expectedSize = entry.size.takeIf { it > 0L }
+                    if (expectedSize != null && tempFile.length() != expectedSize) {
+                        tempFile.delete()
+                        return@use null
+                    }
+                    if (destinationFile.exists()) {
+                        destinationFile.delete()
+                    }
+                    val moved = tempFile.renameTo(destinationFile)
+                    if (!moved) {
+                        tempFile.delete()
+                        return@use null
                     }
                     destinationFile.setReadable(true, true)
                     destinationFile.setWritable(true, true)
@@ -168,6 +185,7 @@ class XmrigRuntime(private val context: Context) {
                     destinationFile
                 }
             }.getOrElse { throwable ->
+                tempFile.delete()
                 onOutput(
                     context.getString(
                         R.string.xmrig_extract_failed,
@@ -220,6 +238,34 @@ class XmrigRuntime(private val context: Context) {
             context.applicationInfo.splitSourceDirs?.let { addAll(it) }
         }.maxOfOrNull { apkPath -> File(apkPath).lastModified() } ?: 0L
 
+    private fun packagedBinaryMetadata(): BinaryMetadata? {
+        val apkCandidates = buildList {
+            add(context.applicationInfo.sourceDir)
+            context.applicationInfo.splitSourceDirs?.let { addAll(it) }
+        }
+        val libEntryCandidates = Build.SUPPORTED_ABIS.map { abi -> "lib/$abi/$BINARY_NAME" }
+
+        apkCandidates.forEach { apkPath ->
+            val metadata = runCatching {
+                ZipFile(apkPath).use { zip ->
+                    val entry = libEntryCandidates
+                        .asSequence()
+                        .mapNotNull(zip::getEntry)
+                        .firstOrNull()
+                        ?: findFallbackBinaryEntry(zip)
+                        ?: return@use null
+                    BinaryMetadata(size = entry.size)
+                }
+            }.getOrNull()
+
+            if (metadata != null) {
+                return metadata
+            }
+        }
+
+        return null
+    }
+
     private fun findFallbackBinaryEntry(zip: ZipFile): ZipEntry? {
         val entries = zip.entries()
         while (entries.hasMoreElements()) {
@@ -251,3 +297,7 @@ class XmrigRuntime(private val context: Context) {
         private const val BINARY_NAME = "libxmrig.so"
     }
 }
+
+private data class BinaryMetadata(
+    val size: Long,
+)
