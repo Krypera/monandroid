@@ -18,7 +18,7 @@ Monandroid is an Android-first GUI wrapper for XMRig that focuses on simple prof
 - Google Play currently disallows apps that mine cryptocurrency on-device. The current app structure is for GitHub Releases/F-Droid style distribution.
 - The developer fee is transparent and configurable from `0%` to `100%`. It is implemented as approximate time-sliced routing, not post-payout splitting.
 - Benchmark mode always disables the developer fee.
-- This repository includes upstream XMRig source under [`third_party/xmrig-upstream`](./third_party/xmrig-upstream) for audit/reference, and ships an Android arm64 runtime under [`native/xmrig/src/main/jniLibs/arm64-v8a`](./native/xmrig/src/main/jniLibs/arm64-v8a).
+- This repository includes a trimmed upstream XMRig source snapshot under [`third_party/xmrig-upstream`](./third_party/xmrig-upstream) for audit/reference, and ships an Android arm64 runtime under [`native/xmrig/src/main/jniLibs/arm64-v8a`](./native/xmrig/src/main/jniLibs/arm64-v8a).
 
 ## Quick start
 
