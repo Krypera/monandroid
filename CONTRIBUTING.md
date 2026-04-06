@@ -2,7 +2,7 @@
 
 Thanks for considering a contribution.
 
-Monandroid is an Android-first open-source wrapper around XMRig. The project values small, reviewable changes, clear reasoning, and respectful collaboration.
+Monandroid is an Android-first open-source app for on-device Monero mining with XMRig. The project values small, reviewable changes, clear reasoning, and respectful collaboration.
 
 ## Before you start
 

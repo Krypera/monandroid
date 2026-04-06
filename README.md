@@ -1,10 +1,10 @@
 # Monandroid
 
-Monandroid is an Android-first GUI wrapper for XMRig that focuses on simple profile management, benchmarking, diagnostics, and a clean on-device mining dashboard. It is intended for GitHub/F-Droid style distribution, not Google Play.
+Monandroid is an Android-first open-source app for on-device Monero mining with XMRig. It adds profile management, benchmarking, diagnostics, and a clean on-device dashboard, and is intended for GitHub/F-Droid style distribution rather than Google Play.
 
 ## What is included
 
-- Kotlin + Jetpack Compose Android app
+- Kotlin + Jetpack Compose Android app for on-device Monero mining
 - Room-backed profile and benchmark storage
 - Encrypted secret storage for pool passwords
 - Foreground mining service with persistent notification
