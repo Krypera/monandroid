@@ -30,6 +30,7 @@
     <string name="action_clear_history">Clear history</string>
     <string name="action_export_csv">Export CSV</string>
     <string name="action_export_diagnostics">Export diagnostics</string>
+    <string name="action_open_repository">Open repository</string>
     <string name="action_back_to_profiles">Back to Profiles</string>
 
     <string name="message_notification_permission_required">Notification permission is required before starting a foreground session.</string>
@@ -192,4 +193,7 @@
     <string name="settings_support_title">Support and Diagnostics</string>
     <string name="settings_version">Version %1$s (%2$d)</string>
     <string name="settings_support_description">Export a support snapshot with miner state, anonymized profile labels, benchmark history and redacted recent logs. Saved pool passwords are redacted before export.</string>
+    <string name="settings_project_title">Project</string>
+    <string name="settings_project_description">Browse the source code, issues, and releases on GitHub.</string>
+    <string name="settings_project_repository_label">GitHub repository</string>
 </resources>

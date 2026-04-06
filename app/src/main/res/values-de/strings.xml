@@ -30,6 +30,7 @@
     <string name="action_clear_history">Verlauf löschen</string>
     <string name="action_export_csv">CSV exportieren</string>
     <string name="action_export_diagnostics">Diagnose exportieren</string>
+    <string name="action_open_repository">Repository oeffnen</string>
     <string name="action_back_to_profiles">Zurück zu Profilen</string>
 
     <string name="message_notification_permission_required">Die Benachrichtigungsberechtigung ist erforderlich, bevor eine Foreground-Sitzung gestartet werden kann.</string>
@@ -192,4 +193,7 @@
     <string name="settings_support_title">Support und Diagnose</string>
     <string name="settings_version">Version %1$s (%2$d)</string>
     <string name="settings_support_description">Exportiere eine Support-Aufnahme mit Miner-Status, anonymisierten Profilbezeichnungen, Benchmark-Verlauf und redigierten aktuellen Logs. Gespeicherte Pool-Passwoerter werden vor dem Export geschwaerzt.</string>
+    <string name="settings_project_title">Projekt</string>
+    <string name="settings_project_description">Durchsuche Quellcode, Issues und Releases auf GitHub.</string>
+    <string name="settings_project_repository_label">GitHub-Repository</string>
 </resources>

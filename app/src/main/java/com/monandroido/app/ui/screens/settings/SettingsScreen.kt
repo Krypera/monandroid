@@ -18,6 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.monandroido.app.R
@@ -36,6 +37,8 @@ fun SettingsScreen(
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
+    val uriHandler = LocalUriHandler.current
+    val projectRepositoryUrl = context.getString(R.string.settings_project_repository_url)
     var sliderValue by remember { mutableFloatStateOf(uiState.requestedDeveloperFeePercent.toFloat()) }
 
     LaunchedEffect(uiState.requestedDeveloperFeePercent, uiState.developerWalletConfigured) {
@@ -165,6 +168,31 @@ fun SettingsScreen(
                 modifier = Modifier.padding(top = 8.dp),
             ) {
                 Text(context.getString(R.string.action_export_diagnostics))
+            }
+        }
+
+        SectionCard(title = context.getString(R.string.settings_project_title)) {
+            Text(
+                text = context.getString(R.string.settings_project_description),
+                style = MaterialTheme.typography.bodySmall,
+            )
+            Text(
+                text = context.getString(R.string.settings_project_repository_label),
+                style = MaterialTheme.typography.labelLarge,
+                fontWeight = FontWeight.SemiBold,
+                modifier = Modifier.padding(top = 10.dp),
+            )
+            Text(
+                text = projectRepositoryUrl,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.padding(top = 4.dp),
+            )
+            TextButton(
+                onClick = { uriHandler.openUri(projectRepositoryUrl) },
+                modifier = Modifier.padding(top = 8.dp),
+            ) {
+                Text(context.getString(R.string.action_open_repository))
             }
         }
     }
