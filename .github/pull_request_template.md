@@ -13,7 +13,7 @@
 ## Risk areas
 
 - [ ] mining/runtime behavior
-- [ ] developer-fee routing
+- [ ] support-routing behavior
 - [ ] profile import/export
 - [ ] diagnostics or secret redaction
 - [ ] translations / string resources

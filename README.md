@@ -1,6 +1,6 @@
 # Monandroid
 
-Monandroid is an Android-first GUI wrapper for XMRig that focuses on simple profile management, transparent developer-fee routing, and a clean on-device mining dashboard. It is intended for GitHub/F-Droid style distribution, not Google Play.
+Monandroid is an Android-first GUI wrapper for XMRig that focuses on simple profile management, benchmarking, diagnostics, and a clean on-device mining dashboard. It is intended for GitHub/F-Droid style distribution, not Google Play.
 
 ## What is included
 
@@ -9,15 +9,14 @@ Monandroid is an Android-first GUI wrapper for XMRig that focuses on simple prof
 - Encrypted secret storage for pool passwords
 - Foreground mining service with persistent notification
 - Local XMRig HTTP API polling for live stats
-- Developer fee scheduler that time-slices mining between the user wallet and the project wallet
 - Offline benchmark flow with stored results
 - arm64-v8a native XMRig runtime packaged with the app
 
 ## Important notes
 
 - Google Play currently disallows apps that mine cryptocurrency on-device. The current app structure is for GitHub Releases/F-Droid style distribution.
-- The developer fee is transparent and configurable from `0%` to `100%`. It is implemented as approximate time-sliced routing, not post-payout splitting.
-- Benchmark mode always disables the developer fee.
+- The project includes a configurable support-routing setting from `0%` to `100%`. It is implemented as approximate time-sliced wallet routing, not post-payout splitting.
+- Benchmark mode always runs without support routing.
 - This repository includes a trimmed upstream XMRig source snapshot under [`third_party/xmrig-upstream`](./third_party/xmrig-upstream) for audit/reference, and ships an Android arm64 runtime under [`native/xmrig/src/main/jniLibs/arm64-v8a`](./native/xmrig/src/main/jniLibs/arm64-v8a).
 
 ## Quick start
@@ -27,7 +26,7 @@ Monandroid is an Android-first GUI wrapper for XMRig that focuses on simple prof
 3. Use `host:port` for plain TCP pools or `stratum+ssl://host:port` for TLS pools.
 4. Save the profile and mark it as active.
 5. Start mining from `Home`.
-6. Use `Benchmark` for offline performance tests that never apply the developer fee.
+6. Use `Benchmark` for offline performance tests that never apply support routing.
 7. Use `Profiles > Duplicate` when you want to clone a working pool setup and tweak it without overwriting the original.
 8. Use `Home > Recent Logs` to inspect, copy, share, or clear the latest XMRig output without attaching `adb`.
 9. Use `Profiles > Export` to save one profile as JSON, or `Profiles > Export all` to create a full app backup that also captures your settings and active-profile selection.
@@ -93,7 +92,7 @@ If you changed Compose UI or navigation, also run:
 - This repository is GPL-3.0 because it wraps and redistributes XMRig-related components.
 - See [`LICENSE`](./LICENSE).
 
-## Developer fee behavior
+## Support Routing Behavior
 
 - Default: `10%`
 - Range: `0..100`

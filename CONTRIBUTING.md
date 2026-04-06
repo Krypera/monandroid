@@ -8,7 +8,7 @@ Monandroid is an Android-first open-source wrapper around XMRig. The project val
 
 - Read the [README](./README.md) for project scope and build requirements.
 - Read the translation guide in [docs/translations.md](./docs/translations.md) before changing user-facing copy.
-- Open an issue first for large changes, architectural work, or behavior changes that may affect mining defaults, security, or developer-fee routing.
+- Open an issue first for large changes, architectural work, or behavior changes that may affect mining defaults, security, or support-routing behavior.
 
 ## Local setup
 
@@ -70,7 +70,7 @@ If you changed Compose UI, navigation, or Android resources, also run:
 - Keep user-facing text in Android string resources, not embedded in Kotlin.
 - Preserve placeholders exactly in translated strings: `%1$s`, `%1$d`, `%1$.1f`, `%%`
 - Do not commit `local.properties`, keystores, signed APKs, or wallet secrets.
-- Be careful with mining defaults. Changes that affect wallet routing, fee behavior, runtime constraints, or benchmark semantics should be called out explicitly in the PR description.
+- Be careful with mining defaults. Changes that affect wallet routing, support-routing behavior, runtime constraints, or benchmark semantics should be called out explicitly in the PR description.
 
 ## Pull request checklist
 

@@ -20,4 +20,4 @@ What workarounds or alternatives did you consider?
 
 ## Notes
 
-Call out any impact on mining defaults, benchmark behavior, diagnostics, translations, or developer-fee routing.
+Call out any impact on mining defaults, benchmark behavior, diagnostics, translations, or support-routing behavior.

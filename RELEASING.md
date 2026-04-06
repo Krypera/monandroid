@@ -50,7 +50,7 @@ Release notes should include:
 - fixed bugs
 - known limitations
 - any mining/runtime behavior changes
-- any developer-fee behavior changes
+- any support-routing behavior changes
 
 ## Final checklist
 
